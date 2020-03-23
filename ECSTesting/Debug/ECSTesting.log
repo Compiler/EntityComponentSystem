@@ -1,0 +1,5 @@
+﻿  pch.cpp
+  Component.cpp
+C:\Users\User\source\repos\ECSTesting\ECSTesting\Components\Component.cpp(9,1): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  ECSTesting.cpp
+  Generating Code...

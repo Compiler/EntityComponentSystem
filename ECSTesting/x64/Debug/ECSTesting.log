@@ -1,0 +1,19 @@
+﻿  Component.cpp
+C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(16,17): warning C4099: 'Vofog::Component': type name first seen using 'struct' now seen using 'class'
+C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(16): message : see declaration of 'Vofog::Component'
+C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(31,22): warning C4244: 'return': conversion from 'unsigned __int64' to 'int', possible loss of data
+C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.cpp(7,33): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  ECSTesting.cpp
+C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(16,17): warning C4099: 'Vofog::Component': type name first seen using 'struct' now seen using 'class'
+C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(16): message : see declaration of 'Vofog::Component'
+C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(31,22): warning C4244: 'return': conversion from 'unsigned __int64' to 'int', possible loss of data
+C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(52,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(67): message : see reference to function template instantiation 'int Vofog::componentCreate<T>(std::vector<int,std::allocator<int>> &,Vofog::EntityHandle,Vofog::Component *)' being compiled
+          with
+          [
+              T=Vofog::PositionComponent
+          ]
+C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(45): message : while compiling class template static data member 'const int Vofog::BaseComponent<Vofog::PositionComponent>::ID'
+C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(85): message : see reference to class template instantiation 'Vofog::BaseComponent<Vofog::PositionComponent>' being compiled
+  Generating Code...
+  ECSTesting.vcxproj -> C:\Users\User\source\repos\ECSTesting\x64\Debug\ECSTesting.exe
