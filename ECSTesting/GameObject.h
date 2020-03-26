@@ -38,16 +38,6 @@ namespace Vofog{
 		
 		}
 
-		template<typename T, typename... TArgs>
-		T& addComponent(TArgs&&... mArgs){
-
-			//T* c(new T(std::forward<TArgs>(mArgs)...));
-		//	_components.emplace_back(std::make_unique<T>(std::forward<TArgs >(mArgs)...));
-		//	return _components.at(getComponentTypeID<T>());
-
-		}
-
-
 
 
 	};

@@ -1,19 +1,28 @@
 ﻿  Component.cpp
 C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(16,17): warning C4099: 'Vofog::Component': type name first seen using 'struct' now seen using 'class'
 C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(16): message : see declaration of 'Vofog::Component'
-C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(31,22): warning C4244: 'return': conversion from 'unsigned __int64' to 'int', possible loss of data
+C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(32,22): warning C4244: 'return': conversion from 'unsigned __int64' to 'int', possible loss of data
 C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.cpp(7,33): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   ECSTesting.cpp
 C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(16,17): warning C4099: 'Vofog::Component': type name first seen using 'struct' now seen using 'class'
 C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(16): message : see declaration of 'Vofog::Component'
-C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(31,22): warning C4244: 'return': conversion from 'unsigned __int64' to 'int', possible loss of data
-C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(52,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(67): message : see reference to function template instantiation 'int Vofog::componentCreate<T>(std::vector<int,std::allocator<int>> &,Vofog::EntityHandle,Vofog::Component *)' being compiled
+C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(32,22): warning C4244: 'return': conversion from 'unsigned __int64' to 'int', possible loss of data
+C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(53,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(68): message : see reference to function template instantiation 'int Vofog::componentCreate<T>(std::vector<int,std::allocator<int>> &,Vofog::EntityHandle,Vofog::Component *)' being compiled
           with
           [
               T=Vofog::PositionComponent
           ]
-C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(45): message : while compiling class template static data member 'const int Vofog::BaseComponent<Vofog::PositionComponent>::ID'
-C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(85): message : see reference to class template instantiation 'Vofog::BaseComponent<Vofog::PositionComponent>' being compiled
+C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(46): message : while compiling class template static data member 'const int Vofog::BaseComponent<Vofog::PositionComponent>::ID'
+C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(86): message : see reference to class template instantiation 'Vofog::BaseComponent<Vofog::PositionComponent>' being compiled
+  ECS.cpp
+C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(16,17): warning C4099: 'Vofog::Component': type name first seen using 'struct' now seen using 'class'
+C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(16): message : see declaration of 'Vofog::Component'
+C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\Component.h(32,22): warning C4244: 'return': conversion from 'unsigned __int64' to 'int', possible loss of data
+C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\ECS.cpp(11,73): error C2440: 'initializing': cannot convert from 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const int,std::vector<uint8_t,std::allocator<uint8_t>>>>>>' to 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const int,std::vector<int,std::allocator<int>>>>>>'
+C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\ECS.cpp(11,52): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\ECS.cpp(11,98): error C2679: binary '!=': no operator found which takes a right-hand operand of type 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const int,std::vector<uint8_t,std::allocator<uint8_t>>>>>>' (or there is no acceptable conversion)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.24.28314\include\xtree(235,21): message : could be 'bool std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const int,std::vector<int,std::allocator<int>>>>>>::operator !=(const std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const int,std::vector<int,std::allocator<int>>>>>> &) const'
+C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\ECS.cpp(11,98): message : while trying to match the argument list '(std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const int,std::vector<int,std::allocator<int>>>>>>, std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const int,std::vector<uint8_t,std::allocator<uint8_t>>>>>>)'
+C:\Users\User\source\repos\ECSTesting\ECSTesting\ECS\ECS.cpp(14,55): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
   Generating Code...
-  ECSTesting.vcxproj -> C:\Users\User\source\repos\ECSTesting\x64\Debug\ECSTesting.exe

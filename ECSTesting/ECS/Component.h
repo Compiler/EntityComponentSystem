@@ -27,6 +27,7 @@ namespace Vofog{
 			return std::get<1>(_componentTypes[id]);
 		}
 
+
 		inline static int getTypeSize(int id){
 			return std::get<2>(_componentTypes[id]);
 		}
