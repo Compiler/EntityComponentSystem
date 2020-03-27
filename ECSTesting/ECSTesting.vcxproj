@@ -153,12 +153,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DynamicTest.h" />
     <ClInclude Include="ECS\Component.h" />
     <ClInclude Include="ECS\ECS.h" />
     <ClInclude Include="ECS\GraphicsComponent.h" />
     <ClInclude Include="ECS\HealthComponent.h" />
     <ClInclude Include="ECS\InputComponent.h" />
     <ClInclude Include="ECS\System.h" />
+    <ClInclude Include="externals\ecs\ecs.hpp" />
+    <ClInclude Include="externals\ecs\ecsComponent.hpp" />
+    <ClInclude Include="externals\ecs\ecsSystem.hpp" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
@@ -171,6 +175,9 @@
     </ClCompile>
     <ClCompile Include="ECSTesting.cpp" />
     <ClCompile Include="ECS\ECS.cpp" />
+    <ClCompile Include="externals\ecs\ecs.cpp" />
+    <ClCompile Include="externals\ecs\ecsComponent.cpp" />
+    <ClCompile Include="externals\ecs\ecsSystem.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
