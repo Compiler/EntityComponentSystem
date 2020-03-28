@@ -2,10 +2,10 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+#include <thread>
 
 #define __PRETTY_FUNCTION__ __FUNCSIG__
-
+#define assert _ASSERT
 
 typedef int GameState;
 
@@ -88,8 +88,58 @@ typedef void* IntHandle;
 void printData(IntHandle handle){
     std::cout << (int)(handle)<< "\n";
 }
+
+class Functor{
+
+public:
+
+    int a;
+    int b;
+    void operator()() {
+        std::cout << a << " + " << b << " = " << a + b << "\n";
+    }
+
+};
+
+void test_function(int& a){
+    std::cout << a << "\n";
+
+}
 int main()
 {
+
+    int a = 4;
+    std::thread my_thread(test_function, std::ref(a));
+    my_thread.join();
+    assert(!my_thread.joinable());
+    exit(std::cin.get());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     TransformComponent transformComponent;
     transformComponent.xPos = 5;
     transformComponent.yPos = 7;

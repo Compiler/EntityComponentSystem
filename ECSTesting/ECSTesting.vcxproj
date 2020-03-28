@@ -155,10 +155,6 @@
   <ItemGroup>
     <ClInclude Include="DynamicTest.h" />
     <ClInclude Include="ECS\Component.h" />
-    <ClInclude Include="ECS\ECS.h" />
-    <ClInclude Include="ECS\GraphicsComponent.h" />
-    <ClInclude Include="ECS\HealthComponent.h" />
-    <ClInclude Include="ECS\InputComponent.h" />
     <ClInclude Include="ECS\System.h" />
     <ClInclude Include="externals\ecs\ecs.hpp" />
     <ClInclude Include="externals\ecs\ecsComponent.hpp" />
@@ -167,14 +163,7 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ECS\Component.cpp">
-      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-      </PrecompiledHeaderFile>
-      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-      </PrecompiledHeaderFile>
-    </ClCompile>
     <ClCompile Include="ECSTesting.cpp" />
-    <ClCompile Include="ECS\ECS.cpp" />
     <ClCompile Include="externals\ecs\ecs.cpp" />
     <ClCompile Include="externals\ecs\ecsComponent.cpp" />
     <ClCompile Include="externals\ecs\ecsSystem.cpp" />

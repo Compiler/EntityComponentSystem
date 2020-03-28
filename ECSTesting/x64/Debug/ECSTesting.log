@@ -1,15 +1,4 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1002,5): warning MSB8027: Two or more files with the name of ECS.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are ECS\ECS.cpp, externals\ecs\ecs.cpp.
-  ecs.cpp
-C:\Users\User\source\repos\ECSTesting\ECSTesting\externals\ecs\ecs.cpp(9,54): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\User\source\repos\ECSTesting\ECSTesting\externals\ecs\ecs.cpp(33,36): warning C4267: '=': conversion from 'size_t' to '_Ty1', possible loss of data
-          with
-          [
-              _Ty1=int
-          ]
-C:\Users\User\source\repos\ECSTesting\ECSTesting\externals\ecs\ecs.cpp(97,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\User\source\repos\ECSTesting\ECSTesting\externals\ecs\ecs.cpp(118,40): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\User\source\repos\ECSTesting\ECSTesting\externals\ecs\ecs.cpp(147,44): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\User\source\repos\ECSTesting\ECSTesting\externals\ecs\ecs.cpp(176,50): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\User\source\repos\ECSTesting\ECSTesting\externals\ecs\ecs.cpp(195,59): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\User\source\repos\ECSTesting\ECSTesting\externals\ecs\ecs.cpp(220,48): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+﻿  ECSTesting.cpp
+C:\Users\User\source\repos\ECSTesting\ECSTesting\ECSTesting.cpp(89,31): warning C4311: 'type cast': pointer truncation from 'IntHandle' to 'int'
+C:\Users\User\source\repos\ECSTesting\ECSTesting\ECSTesting.cpp(89,31): warning C4302: 'type cast': truncation from 'IntHandle' to 'int'
   ECSTesting.vcxproj -> C:\Users\User\source\repos\ECSTesting\x64\Debug\ECSTesting.exe
