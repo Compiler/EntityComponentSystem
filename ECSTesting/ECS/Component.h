@@ -27,8 +27,8 @@ namespace Vofog{
 
 
 
-	struct SpriteComponent : public Component{
-		SpriteComponent(){ DEBUG_NAME = "SpriteComponent"; }
+	struct RenderableComponent : public Component{
+		RenderableComponent(){ DEBUG_NAME = "RenderableComponent"; }
 		char data;
 	};
 

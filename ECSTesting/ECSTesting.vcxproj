@@ -155,6 +155,8 @@
   <ItemGroup>
     <ClInclude Include="DynamicTest.h" />
     <ClInclude Include="ECS\Component.h" />
+    <ClInclude Include="ECS\Entity.h" />
+    <ClInclude Include="ECS\EntityManager.h" />
     <ClInclude Include="ECS\System.h" />
     <ClInclude Include="externals\ecs\ecs.hpp" />
     <ClInclude Include="externals\ecs\ecsComponent.hpp" />

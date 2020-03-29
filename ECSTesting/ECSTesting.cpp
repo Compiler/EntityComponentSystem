@@ -5,6 +5,8 @@
 #include <thread>
 #include <memory>
 #include "ECS/System.h"
+#include "ECS/Entity.h"
+#include "ECS/EntityManager.h"
 #include "ECS/Component.h"
 
 #define __PRETTY_FUNCTION__ __FUNCSIG__
@@ -56,7 +58,7 @@ void init(){
         }
     }
 }
-
+ 
 void drawClear(){
 
     for(int i = 0; i < 50; i++)std::cout << "\n";
@@ -68,10 +70,9 @@ void drawClear(){
     }
 
 }
-char takeInput(){
-    char input;
-    std::cin >> input;
-    return input;
+char sys_input;
+void takeInput(){
+    std::cin >> sys_input;
 }
 
 
@@ -81,7 +82,7 @@ char takeInput(){
 
 
 
-struct A{};
+
 int main()
 {
 
@@ -110,17 +111,21 @@ int main()
 
 
 
-
-
+    Vofog::EntityManager manager;
+    Vofog::Entity player;
+    manager.addEntity(player.getID());
     std::shared_ptr<Vofog::TransformComponent> transform = std::make_shared<Vofog::TransformComponent>();transform->xPos = 4; transform->yPos = 6;
     std::shared_ptr<Vofog::InputComponent> input = std::make_shared<Vofog::InputComponent>();
-    MovementControlSystem system(transform, input);
+    manager.attachComponent(player, transform);
+    manager.attachComponent(player, input);
+    MovementControlSystem system(manager.getComponent<Vofog::TransformComponent>(player), manager.getComponent<Vofog::InputComponent>(player));
 
-
+  
     init();
     while(state){
         drawClear();
-        input->dataQueue.push_back(takeInput());
+        manager.getComponent<Vofog::InputComponent>(player)->dataQueue.push_back(sys_input);
+        takeInput();
         system.updateComponents();
         map[(int)transform->xPos][(int)transform->yPos] = '%';
     }
