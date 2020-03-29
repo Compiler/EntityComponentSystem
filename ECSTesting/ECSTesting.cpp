@@ -3,6 +3,9 @@
 #include <string>
 #include <vector>
 #include <thread>
+#include <memory>
+#include "ECS/System.h"
+#include "ECS/Component.h"
 
 #define __PRETTY_FUNCTION__ __FUNCSIG__
 #define assert _ASSERT
@@ -10,30 +13,24 @@
 typedef int GameState;
 
 
-struct SpriteComponent{
-    char data;
-};
-
-struct TransformComponent{
-    float xPos, yPos;
-};
-
-struct InputComponent{
-    std::vector<char> dataQueue;
-};
 
 
-class MovementControlSystem{
+
+class MovementControlSystem : Vofog::System{
 public:
 
-    MovementControlSystem(){
-       // addComponentType(TransformComponent::ID);
-       // addComponentType(InputComponent::ID);
+    MovementControlSystem(std::shared_ptr<Vofog::TransformComponent> t, std::shared_ptr<Vofog::InputComponent> i){
+        addComponent(t);
+        addComponent(i);
     }
 
-    void updateComponents(void** components){
-        TransformComponent* transform = (TransformComponent*)components[0];
-        InputComponent* input = (InputComponent*)components[1];
+    void updateComponents(){
+        std::shared_ptr<Vofog::TransformComponent> transform = 
+            std::dynamic_pointer_cast<Vofog::TransformComponent>(m_components[Vofog::type_id<Vofog::TransformComponent>()]);
+        std::shared_ptr<Vofog::InputComponent> input = 
+            std::dynamic_pointer_cast<Vofog::InputComponent>(m_components[Vofog::type_id<Vofog::InputComponent>()]);
+
+
 
         for(int i = 0; i < input->dataQueue.size(); i++){
             char dir = input->dataQueue[i];
@@ -42,7 +39,7 @@ public:
             if(dir == 'w')transform->yPos += 1;
             if(dir == 's')transform->yPos -= 1;
         }
-        //input->dataQueue.clear();
+        input->dataQueue.clear();
     }
 
 
@@ -71,48 +68,24 @@ void drawClear(){
     }
 
 }
-void takeInput(){
+char takeInput(){
     char input;
     std::cin >> input;
-
-}
-
-std::string test(int a, int b){
-    return std::to_string(a) + std::to_string(b);
+    return input;
 }
 
 
-typedef void* IntHandle;
 
 
-void printData(IntHandle handle){
-    std::cout << (int)(handle)<< "\n";
-}
 
-class Functor{
 
-public:
 
-    int a;
-    int b;
-    void operator()() {
-        std::cout << a << " + " << b << " = " << a + b << "\n";
-    }
 
-};
-
-void test_function(int& a){
-    std::cout << a << "\n";
-
-}
+struct A{};
 int main()
 {
 
-    int a = 4;
-    std::thread my_thread(test_function, std::ref(a));
-    my_thread.join();
-    assert(!my_thread.joinable());
-    exit(std::cin.get());
+    
 
 
 
@@ -139,22 +112,17 @@ int main()
 
 
 
+    std::shared_ptr<Vofog::TransformComponent> transform = std::make_shared<Vofog::TransformComponent>();transform->xPos = 4; transform->yPos = 6;
+    std::shared_ptr<Vofog::InputComponent> input = std::make_shared<Vofog::InputComponent>();
+    MovementControlSystem system(transform, input);
 
-    TransformComponent transformComponent;
-    transformComponent.xPos = 5;
-    transformComponent.yPos = 7;
-    SpriteComponent spriteComponent;
-    spriteComponent.data = '&';
-
-    InputComponent inputComponent;
-
-
-    MovementControlSystem system;
 
     init();
     while(state){
         drawClear();
-        takeInput();
+        input->dataQueue.push_back(takeInput());
+        system.updateComponents();
+        map[(int)transform->xPos][(int)transform->yPos] = '%';
     }
 
     
