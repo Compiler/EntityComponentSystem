@@ -26,7 +26,7 @@ public:
         addComponent(i);
     }
 
-    void updateComponents(){
+    void update() override {
         std::shared_ptr<Vofog::TransformComponent> transform = 
             std::dynamic_pointer_cast<Vofog::TransformComponent>(m_components[Vofog::type_id<Vofog::TransformComponent>()]);
         std::shared_ptr<Vofog::InputComponent> input = 
@@ -116,18 +116,26 @@ int main()
     manager.addEntity(player.getID());
     std::shared_ptr<Vofog::TransformComponent> transform = std::make_shared<Vofog::TransformComponent>();transform->xPos = 4; transform->yPos = 6;
     std::shared_ptr<Vofog::InputComponent> input = std::make_shared<Vofog::InputComponent>();
-    manager.attachComponent(player, transform);
-    manager.attachComponent(player, input);
+    std::shared_ptr<Vofog::RenderableComponent> render = std::make_shared<Vofog::RenderableComponent>();
+    render->data = '$';
+    //manager.attachComponent(player, transform);
+    //manager.attachComponent(player, input);
+    manager.attachComponent(player, transform, input, render);
+
     MovementControlSystem system(manager.getComponent<Vofog::TransformComponent>(player), manager.getComponent<Vofog::InputComponent>(player));
 
   
     init();
     while(state){
         drawClear();
-        manager.getComponent<Vofog::InputComponent>(player)->dataQueue.push_back(sys_input);
         takeInput();
-        system.updateComponents();
-        map[(int)transform->xPos][(int)transform->yPos] = '%';
+        manager.getComponent<Vofog::InputComponent>(player)->dataQueue.push_back(sys_input);
+        system.update();
+        std::vector<Vofog::EntityID> renderables = manager.getAssociatedEntities<Vofog::RenderableComponent, Vofog::TransformComponent>();
+        for(int i = 0; i < renderables.size(); i++){
+            map[(int)manager.getComponent<Vofog::TransformComponent>(renderables[i])->xPos][(int)manager.getComponent<Vofog::TransformComponent>(renderables[i])->yPos]
+                = manager.getComponent<Vofog::RenderableComponent>(renderables[i])->data;
+        }
     }
 
     

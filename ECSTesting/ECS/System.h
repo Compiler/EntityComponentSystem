@@ -18,6 +18,9 @@ namespace Vofog{
 			m_components[type_id<T>()] = type;
 		}
 
+		virtual void update() = 0;
+
+
 
 
 	};
